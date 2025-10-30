@@ -1,0 +1,144 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Comic Sans MS', cursive;
+  height: 100vh;
+  background: url('images/heartsformygf.jpg') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  padding: 30px 40px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  transition: opacity 0.6s ease;
+}
+
+.cat {
+  width: 180px;
+  margin-bottom: 20px;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+h1 {
+  color: #ff4081;
+  font-size: 2em;
+  margin-bottom: 25px;
+}
+
+.buttons {
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+button {
+  padding: 10px 25px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#yesBtn {
+  background-color: #ff80ab;
+  color: white;
+  position: relative;
+  z-index: 2;
+  margin-left: 350px;
+}
+
+#yesBtn:hover {
+  animation: bounce 0.6s ease;
+  box-shadow: 0 0 15px #ff80ab;
+}
+
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-10px); }
+  50%  { transform: translateY(0); }
+  70%  { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+#noBtn {
+  background-color: #f8bbd0;
+  color: #333;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: top 0.5s ease, left 0.5s ease;
+  z-index: 1;
+}
+
+/* 💌 Экран сообщения */
+#message {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.95);
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+#message.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.message-box {
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+.cat-message {
+  width: 200px;
+  margin-bottom: 15px;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+h2 {
+  color: #ff4081;
+  font-size: 2em;
+  margin: 0;
+}
+
+p {
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* 💕 Сердечки */
+.heart {
+  position: fixed;
+  bottom: 0;
+  font-size: 20px;
+  animation: fall linear forwards;
+  pointer-events: none;
+}
+
+@keyframes fall {
+  from { transform: translateY(0); opacity: 1; }
+  to { transform: translateY(-110vh); opacity: 0; }
+}
+
+.hidden {
+  display: none;
+}
